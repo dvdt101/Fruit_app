@@ -12,13 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FruitApp">
-        <activity android:name=".DetailsActivity"
+        <activity
+            android:name=".DetailsActivity"
             android:label="Detalhes da fruta"
-
+            android:screenOrientation="portrait"
             />
-        <activity android:name=".AddActivity"
+        <activity
+            android:name=".SecondActivity"
             android:label="Adicionar fruta "
-
+            android:screenOrientation="portrait"
             />
         <activity android:name=".MainActivity">
             <intent-filter>

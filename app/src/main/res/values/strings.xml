@@ -1,4 +1,32 @@
 <resources>
     <string name="app_name">Fruit App</string>
     <string name="adicionar_fruta">Adicionar Fruta</string>
+    <string name="dummy_strawberry">Morango</string>
+    <string name="dummy_gapes">Uvas</string>
+    <string name="dummy_apple">Maçã</string>
+    <string name="dummy_strawberry_benefits">
+        O morango é também uma fruta rica em antioxidantes, como antocianinas e o ácido elágico,
+        que conferem outros benefícios para a saúde, tias como combater o envelhecimento da pele,
+        ajudar a prevenir doenças cardiovasculares, melhorar a capacidade mental, prevenir o câncer
+        e ajudar a combater inflamações.
+    </string>
+    <string name="dummy_gapes_benefits">
+        A uva é uma fruta rica em antioxidantes, que são encontrados principalmente em sua casca,
+        folhas e sementes, proporcionando diversos benefícios para a saúde, como prevenção do câncer,
+        diminuição da fadiga muscular e melhora do funcionamento do intestino.
+    </string>
+    <string name="dummy_apple_benefits">
+        Por ser rica em propriedades antioxidantes, tanto na polpa como na casca, o consumo diário
+        da maçã ajuda a combater os radicais livres, proporcionando uma pele bonita e saudável, além
+        de proteger o nosso organismo de diversas doenças.
+    </string>
+    <string name="fa_a_uma_breve_descri_o">Faça uma breve descrição</string>
+    <string name="digite_nome_da_fruta">Digite nome da fruta</string>
+    <string name="concluir">Concluir</string>
+    <string name="nome">Nome</string>
+    <string name="benef_cios">Benefícios</string>
+    <string name="clique_para_inserir_imagem">Clique para inserir imagem</string>
+    <string name="descri_o">Descrição</string>
+    <string name="deletar">Deletar</string>
+    <string name="beneficios_details">Benefícios :</string>
 </resources>

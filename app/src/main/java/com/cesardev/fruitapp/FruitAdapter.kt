@@ -42,16 +42,16 @@ class FruitAdapter(private val fruitList: List<Fruit>,
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
        val currentItem = fruitList[position]
 
-        if(currentItem.image != 0){
-            holder.imageView.setImageResource(currentItem.image)
-        }else if(currentItem.Bitmap != null){
-            holder.imageView.setImageBitmap(currentItem.Bitmap)
+        if(currentItem.dummyImage != 0){
+            holder.imageView.setImageResource(currentItem.dummyImage)
+        }else if(currentItem.BitmapImage != null){
+            holder.imageView.setImageBitmap(currentItem.BitmapImage)
         }else{
             holder.imageView.setImageResource(R.drawable.ic_android)
         }
 
         holder.titleView.text = currentItem.name
-        holder.descriptionView.text = currentItem.description
+        holder.descriptionView.text = currentItem.benefits
     }
 
     override fun getItemCount() = fruitList.size

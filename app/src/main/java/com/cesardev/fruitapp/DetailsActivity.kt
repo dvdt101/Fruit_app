@@ -23,21 +23,20 @@ class DetailsActivity : AppCompatActivity() {
 
         deleteButton.setOnClickListener {deleteItem()}
         title.text = fruit?.name
-        description.text = fruit?.description
+        description.text = fruit?.benefits
 
-        if(fruit?.Bitmap != null){
-            image.setImageBitmap(fruit.Bitmap)
-            //Toast.makeText(this,fruit.toString(),Toast.LENGTH_SHORT).show()
-            //description.text = fruit.toString()
-        }else if(fruit?.image != 0){
-            image.setImageResource(fruit!!.image)
+        if(fruit?.BitmapImage != null){
+            image.setImageBitmap(fruit.BitmapImage)
+
+        }else if(fruit?.dummyImage != 0){
+            image.setImageResource(fruit!!.dummyImage)
         }else{
             image.setImageResource(R.drawable.ic_android)
         }
 
     }
 
-
+    //Deleta o item na lista da MainActivity
     private fun deleteItem(){
         intent = Intent(this, MainActivity::class.java)
         setResult(Activity.RESULT_OK, intent)
