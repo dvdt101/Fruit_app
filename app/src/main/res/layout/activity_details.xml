@@ -8,45 +8,88 @@
 
     <ImageView
         android:id="@+id/details_image_view"
-        android:layout_width="228dp"
-        android:layout_height="158dp"
-        android:layout_marginTop="76dp"
+        android:layout_width="409dp"
+        android:layout_height="254dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.888"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_launcher_background" />
 
-    <TextView
-        android:id="@+id/details_title_text_view"
-        android:layout_width="142dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="20dp"
-        android:text="Nome Fruta"
-        android:textAlignment="center"
-        android:textSize="24sp"
+    <View
+        android:id="@+id/view"
+        android:layout_width="412dp"
+        android:layout_height="461dp"
+        android:layout_marginTop="12dp"
+        android:background="#FFC25C"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/details_image_view" />
 
     <TextView
+        android:id="@+id/details_title_text_view"
+        android:layout_width="314dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Nome Fruta"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/details_image_view" />
+
+    <TextView
         android:id="@+id/details_description_text_view"
-        android:layout_width="373dp"
-        android:layout_height="366dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="332dp"
+        android:layout_height="228dp"
+        android:layout_marginTop="56dp"
+        android:background="#f7f0f0"
+        android:fontFamily="sans-serif-condensed-light"
+        android:padding="5dp"
+        android:paddingStart="5dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="5dp"
         android:text="Descrição"
+        android:textColor="@color/black"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/details_title_text_view" />
 
     <Button
         android:id="@+id/deleteButton"
-        android:layout_width="102dp"
-        android:layout_height="37dp"
+        android:layout_width="143dp"
+        android:layout_height="55dp"
         android:layout_marginTop="16dp"
+        android:backgroundTint="#fc2003"
+        android:colorAccent="#fc2003"
+        android:shadowColor="#FFFFFF"
         android:text="Deletar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/details_description_text_view" />
+
+    <TextView
+        android:id="@+id/benefitsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Benefícios :"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/details_description_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/details_title_text_view"
+        app:layout_constraintVertical_bias="0.125" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,9 +19,11 @@ class AddActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add)
         //Funcionando normalmente
-        val imageBtn = findViewById<Button>(R.id.imageButton)
-        imageBtn.setOnClickListener{handleSelectedImage()}
 
+
+        val image = findViewById<ImageView>(R.id.selected_image_view)
+        image.setImageResource(R.drawable.image)
+        image.setOnClickListener { handleSelectedImage() }
         val addBtn = findViewById<Button>(R.id.addButton)
         addBtn.setOnClickListener { handleAddFruit() }
 
@@ -72,6 +74,7 @@ class AddActivity : AppCompatActivity() {
             if(requestCode == 1){
                 if(data != null){
                     val uri = data.data
+                    //image.background(R.drawable.whiteBackground)
                     image.setImageURI(uri)
                     image_uri = uri
                 }
