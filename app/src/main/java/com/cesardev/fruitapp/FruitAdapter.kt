@@ -1,17 +1,23 @@
 package com.cesardev.fruitapp
 
+import android.app.Activity
+import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import java.security.AccessControlContext
+import java.util.*
 
 
-class FruitAdapter(private val fruitList: List<Fruit>,
-                   private val listenner: OnItemClickListenner
+class FruitAdapter(private val fruitList: MutableList<Fruit>,
+                   private val listenner: OnItemClickListenner,
+                   private val context: Context
 ) : RecyclerView.Adapter<FruitAdapter.ViewHolder>(){
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener{
@@ -65,11 +71,26 @@ class FruitAdapter(private val fruitList: List<Fruit>,
 
 
     fun swap(initialPosition: Int, targetPosition: Int) {
-
+        Collections.swap(fruitList, initialPosition, targetPosition)
+        notifyItemMoved(initialPosition, targetPosition)
     }
 
     fun remove(position: Int) {
-        TODO("Not yet implemented")
+
+        val builder = AlertDialog.Builder(context)
+        builder.setTitle("Deletar")
+        builder.setMessage("Você realmente deseja deletar este item ?")
+        builder.setPositiveButton("Sim"){dialog, it ->
+            fruitList.removeAt(position)
+            notifyItemRemoved(position)
+        }
+        builder.setNegativeButton("Não"){dialog, it ->
+            Toast.makeText(context,"Ação cancelada", Toast.LENGTH_SHORT).show()
+        }
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+
+
     }
 
 }

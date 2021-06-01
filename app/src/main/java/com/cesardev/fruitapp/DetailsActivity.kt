@@ -1,6 +1,7 @@
 package com.cesardev.fruitapp
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
@@ -21,7 +22,7 @@ class DetailsActivity : AppCompatActivity() {
         val description = findViewById<TextView>(R.id.details_description_text_view)
         val image = findViewById<ImageView>(R.id.details_image_view)
 
-        deleteButton.setOnClickListener {deleteItem()}
+        deleteButton.setOnClickListener { deleteItem() }
         title.text = fruit?.name
         description.text = fruit?.benefits
 
@@ -38,9 +39,24 @@ class DetailsActivity : AppCompatActivity() {
 
     //Deleta o item na lista da MainActivity
     private fun deleteItem(){
-        intent = Intent(this, MainActivity::class.java)
-        setResult(Activity.RESULT_OK, intent)
-        finish()
+
+        val builder = AlertDialog.Builder(this)
+
+        builder.setTitle("Deletar")
+        builder.setMessage("Você realmente deseja deletar este item ?")
+        builder.setPositiveButton("Sim"){dialog, it ->
+            intent = Intent(this, MainActivity::class.java)
+            setResult(Activity.RESULT_OK, intent)
+            finish()
+        }
+        builder.setNegativeButton("Não"){dialog, it ->
+            Toast.makeText(this,"Ação cancelada",Toast.LENGTH_SHORT).show()
+        }
+
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+
+
     }
 
     override fun onBackPressed() {

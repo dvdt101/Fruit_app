@@ -4,7 +4,9 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -36,12 +38,13 @@ class MainActivity : AppCompatActivity(), FruitAdapter.OnItemClickListenner {
         }
 
         val recycle_view : RecyclerView = findViewById(R.id.rview)
-        adapter = FruitAdapter(fruitList!!, this)
+        adapter = FruitAdapter(fruitList!!, this, this)
         recycle_view.adapter = adapter
         recycle_view.layoutManager = LinearLayoutManager(this)
         recycle_view.setHasFixedSize(true)
 
-
+        val itemTouchHelper = ItemTouchHelper(FruitItemTouchHelperCallBack(adapter!!))
+        itemTouchHelper.attachToRecyclerView(recycle_view)
     }
         //Chama SecondActivity para adicionar o item
     fun insertItem(v: View){
@@ -83,9 +86,23 @@ class MainActivity : AppCompatActivity(), FruitAdapter.OnItemClickListenner {
         if(requestCode == 1 && resultCode == Activity.RESULT_OK){
             val newItem = data?.getParcelableExtra<Fruit>("FRUIT")
             if (newItem != null) {
-                fruitList?.add(newItem)
-                var listIndex = fruitList?.lastIndex
-                adapter?.notifyItemInserted(fruitList!!.lastIndex)
+
+                var existItem:Boolean = false;
+
+
+                fruitList?.forEach {
+                    if(it.name.equals(newItem.name, ignoreCase = true)) existItem = true
+                }
+
+                if(!existItem){
+                    fruitList?.add(newItem)
+                    var listIndex = fruitList?.lastIndex
+                    adapter?.notifyItemInserted(fruitList!!.lastIndex)
+                    Toast.makeText(this, "Nova fruta adiconada", Toast.LENGTH_SHORT).show()
+                }else{
+                    Toast.makeText(this, "Está fruta já existe na lista", Toast.LENGTH_SHORT).show()
+                }
+
             }
         }
 
