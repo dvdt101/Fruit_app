@@ -16,29 +16,36 @@ class FruitAdapter(private val fruitList: List<Fruit>,
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener{
 
+        val imageView : ImageView = itemView.findViewById(R.id.image_view)
+        val titleView : TextView = itemView.findViewById(R.id.titleView)
+        val descriptionView : TextView = itemView.findViewById(R.id.descriptionView)
+
+        //Seta onClickListener para os items
         init {
             itemView.setOnClickListener(this)
         }
-
+        //Sobescreve função onClick na View.OnClickListener
         override fun onClick(v: View?) {
             val position = getBindingAdapterPosition()
 
             if(position != RecyclerView.NO_POSITION)
                 listenner.onItemClick(position)
         }
-        val imageView : ImageView = itemView.findViewById(R.id.image_view)
-        val titleView : TextView = itemView.findViewById(R.id.titleView)
-        val descriptionView : TextView = itemView.findViewById(R.id.descriptionView)
+
     }
+
     interface OnItemClickListenner{
         fun onItemClick(position: Int)
     }
 
+    //onde o layout que será usado no RecyclerView é inflado.
+    // O próprio adapter já usa View Holder para reusar o objetos criados.
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.fruit_card_view,parent,false)
         return  ViewHolder(itemView)
     }
 
+    //preenche o objeto View Holder com as informações.
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
        val currentItem = fruitList[position]
 
@@ -55,5 +62,14 @@ class FruitAdapter(private val fruitList: List<Fruit>,
     }
 
     override fun getItemCount() = fruitList.size
+
+
+    fun swap(initialPosition: Int, targetPosition: Int) {
+
+    }
+
+    fun remove(position: Int) {
+        TODO("Not yet implemented")
+    }
 
 }

@@ -89,7 +89,6 @@ class MainActivity : AppCompatActivity(), FruitAdapter.OnItemClickListenner {
             }
         }
 
-
         if(requestCode == 2 && resultCode == Activity.RESULT_OK){
 
                 fruitList?.removeAt(selectedPosition!!)
