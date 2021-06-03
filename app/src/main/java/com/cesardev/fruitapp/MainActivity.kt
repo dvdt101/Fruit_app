@@ -119,9 +119,9 @@ class MainActivity : AppCompatActivity(), FruitAdapter.OnItemClickListenner {
                     fruitList?.add(newItem)
                     var listIndex = fruitList?.lastIndex
                     adapter?.notifyItemInserted(fruitList!!.lastIndex)
-                    Toast.makeText(this, "Nova fruta adiconada", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, resources.getString(R.string.add_item), Toast.LENGTH_SHORT).show()
                 }else{
-                    Toast.makeText(this, "Está fruta já existe na lista", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, resources.getString(R.string.item_already_exist), Toast.LENGTH_SHORT).show()
                 }
 
             }
@@ -131,6 +131,7 @@ class MainActivity : AppCompatActivity(), FruitAdapter.OnItemClickListenner {
 
                 fruitList?.removeAt(selectedPosition!!)
                 adapter?.notifyItemRemoved(selectedPosition!!)
+            Toast.makeText(this, resources.getString(R.string.removed_item), Toast.LENGTH_SHORT).show()
 
         }
 

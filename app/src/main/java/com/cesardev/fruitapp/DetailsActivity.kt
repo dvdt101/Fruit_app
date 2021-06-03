@@ -42,15 +42,15 @@ class DetailsActivity : AppCompatActivity() {
 
         val builder = AlertDialog.Builder(this)
 
-        builder.setTitle("Deletar")
-        builder.setMessage("Você realmente deseja deletar este item ?")
-        builder.setPositiveButton("Sim"){dialog, it ->
+        builder.setTitle( resources.getString(R.string.dialog_title))
+        builder.setMessage(resources.getString(R.string.dialog_message))
+        builder.setPositiveButton(resources.getString(R.string.yes_option)){dialog, it ->
             intent = Intent(this, MainActivity::class.java)
             setResult(Activity.RESULT_OK, intent)
             finish()
         }
-        builder.setNegativeButton("Não"){dialog, it ->
-            Toast.makeText(this,"Ação cancelada",Toast.LENGTH_SHORT).show()
+        builder.setNegativeButton(resources.getString(R.string.no_option)){dialog, it ->
+            Toast.makeText(this,resources.getString(R.string.action_canceled),Toast.LENGTH_SHORT).show()
         }
 
         val dialog: AlertDialog = builder.create()

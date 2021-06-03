@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">Fruit App</string>
-    <string name="adicionar_fruta">Adicionar Fruta</string>
+
+    <!-- Activities label String -->
+    <string name="second_activity_label">Adicionar Fruta</string>
+    <string name="details_activity_label">Detalhes</string>
+    <string name="main_activity_label">Lista de Frutas</string>
+
+
+    <!-- DummyList Strings -->
     <string name="dummy_strawberry">Morango</string>
     <string name="dummy_gapes">Uvas</string>
     <string name="dummy_apple">Maçã</string>
@@ -20,13 +27,31 @@
         da maçã ajuda a combater os radicais livres, proporcionando uma pele bonita e saudável, além
         de proteger o nosso organismo de diversas doenças.
     </string>
-    <string name="fa_a_uma_breve_descri_o">Faça uma breve descrição</string>
-    <string name="digite_nome_da_fruta">Digite nome da fruta</string>
-    <string name="concluir">Concluir</string>
-    <string name="nome">Nome</string>
-    <string name="benef_cios">Benefícios</string>
-    <string name="clique_para_inserir_imagem">Clique para inserir imagem</string>
-    <string name="descri_o">Descrição</string>
-    <string name="deletar">Deletar</string>
-    <string name="beneficios_details">Benefícios :</string>
+
+    <!-- Second Activity Strings -->
+    <string name="benefits_input">Faça uma breve descrição dos Benefícios</string>
+    <string name="fruit_name_input">Digite nome da fruta</string>
+    <string name="done_button">Concluir</string>
+    <string name="name_label">Nome</string>
+    <string name="benefits_label">Benefícios</string>
+    <string name="insert_image_label">Clique para inserir imagem</string>
+
+    <!-- Details Activity  Strings -->
+    <string name="benefits_textarea">Descrição dos benefícios</string>
+    <string name="delete_btn">Deletar</string>
+    <string name="benefits_label_detailsActivity">Benefícios :</string>
+    <string name="fruitname_label_detailsActivity">Nome da Fruta :</string>
+
+    <!-- Delete AlertDialogs String-->
+    <string name="dialog_title">Deletar Fruta</string>
+    <string name="dialog_message">Você realmente deseja deletar a fruta ?</string>
+    <string name="yes_option">Sim</string>
+    <string name="no_option">Não</string>
+
+    <!--Toast String -->
+    <string name="action_canceled">Ação cancelada</string>
+    <string name="removed_item">Fruta removida da lista</string>
+    <string name="add_item">Nova fruta adicionada a lista</string>
+    <string name="item_already_exist">Fruta já existe na lista</string>
+
 </resources>

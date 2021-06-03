@@ -14,15 +14,16 @@
         android:theme="@style/Theme.FruitApp">
         <activity
             android:name=".DetailsActivity"
-            android:label="Detalhes da fruta"
+            android:label="@string/details_activity_label"
             android:screenOrientation="portrait"
             />
         <activity
             android:name=".SecondActivity"
-            android:label="Adicionar fruta "
+            android:label="@string/second_activity_label"
             android:screenOrientation="portrait"
             />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:label="@string/main_activity_label">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

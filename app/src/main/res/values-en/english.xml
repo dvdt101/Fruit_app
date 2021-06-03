@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <string name="app_name">Fruit App</string>
+
+        <!-- Activities label String -->
+        <string name="second_activity_label">Add new fruit</string>
+        <string name="details_activity_label">Fruit details</string>
+        <string name="main_activity_label">Fruits list</string>
+
+
+        <!-- DummyList Strings -->
+        <string name="dummy_strawberry">Strawberry</string>
+        <string name="dummy_gapes">Gapes</string>
+        <string name="dummy_apple">Apple</string>
+        <string name="dummy_strawberry_benefits">
+        Strawberry is also a fruit rich in antioxidants, such as anthocyanins and ellagic acid,
+        that confer other health benefits, such as fighting skin aging,
+        help prevent cardiovascular disease, improve mental ability, prevent cancer
+        and help fight inflammation.
+    </string>
+        <string name="dummy_gapes_benefits">
+        Grapes are a fruit rich in antioxidants, which are found mainly in its skin,
+        leaves and seeds, providing several health benefits, such as cancer prevention,
+        decreased muscle fatigue and improved bowel function.
+    </string>
+        <string name="dummy_apple_benefits">
+        Because it is rich in antioxidant properties, both in the pulp and in the skin, daily consumption
+        apple helps fight free radicals, providing beautiful and healthy skin, in addition to
+         protect our body from various diseases.
+    </string>
+
+        <!-- Second Activity Strings -->
+        <string name="benefits_input">Type here the fruit benefits </string>
+        <string name="fruit_name_input">Type here the fruit name</string>
+        <string name="done_button">Done</string>
+        <string name="name_label">Name</string>
+        <string name="benefits_label">Benefits</string>
+        <string name="insert_image_label">Press here to insert an image</string>
+
+        <!-- Details Activity  Strings -->
+        <string name="benefits_textarea">Benefits description</string>
+        <string name="delete_btn">Delete Fruit</string>
+        <string name="benefits_label_detailsActivity">Benefits :</string>
+        <string name="fruitname_label_detailsActivity">Fruit name :</string>
+
+        <!-- Delete AlertDialogs String-->
+        <string name="dialog_title">Delete Fruit</string>
+        <string name="dialog_message">Are you sure ?</string>
+        <string name="yes_option">Yes</string>
+        <string name="no_option">No</string>
+
+        <!--Toast String -->
+        <string name="action_canceled">Canceled</string>
+        <string name="removed_item">Fruit removed</string>
+        <string name="add_item">New fruit add</string>
+        <string name="item_already_exist">Fruit already exist on the list</string>
+
+
+</resources>
