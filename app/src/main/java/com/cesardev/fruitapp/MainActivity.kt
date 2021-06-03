@@ -48,11 +48,6 @@ class MainActivity : AppCompatActivity(), FruitAdapter.OnItemClickListenner {
         val itemTouchHelper = ItemTouchHelper(FruitItemTouchHelperCallBack(adapter!!, this))
         itemTouchHelper.attachToRecyclerView(recycle_view)
     }
-        //Chama SecondActivity para adicionar o item
-    fun insertItem(v: View){
-        val intent : Intent =  Intent(this, SecondActivity::class.java)
-        startActivityForResult(intent, 1)
-    }
 
         //Cria lista inicial
     private fun dummyList() : ArrayList<Fruit>{

@@ -27,16 +27,16 @@ class FruitItemTouchHelperCallBack(private val fruitRecyclerAdapter: FruitAdapte
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
         val position = viewHolder.adapterPosition
         val builder = AlertDialog.Builder(context)
-        builder.setTitle(Resources.getSystem().getString(R.string.dialog_title))
-        builder.setMessage(Resources.getSystem().getString(R.string.dialog_message))
-        builder.setPositiveButton(Resources.getSystem().getString(R.string.yes_option)){dialog, it ->
+        builder.setTitle(context.getString(R.string.dialog_title))
+        builder.setMessage(context.getString(R.string.dialog_message))
+        builder.setPositiveButton(context.getString(R.string.yes_option)){dialog, it ->
             fruitRecyclerAdapter.remove(position)
-            Toast.makeText(context,Resources.getSystem().getString(R.string.removed_item), Toast.LENGTH_SHORT).show()
+            Toast.makeText(context,context.getString(R.string.removed_item), Toast.LENGTH_SHORT).show()
         }
 
-        builder.setNegativeButton(Resources.getSystem().getString(R.string.no_option)){dialog, it ->
+        builder.setNegativeButton(context.getString(R.string.no_option)){dialog, it ->
             fruitRecyclerAdapter.notifyItemChanged(viewHolder.getAdapterPosition());
-            Toast.makeText(context, Resources.getSystem().getString(R.string.action_canceled), Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, context.getString(R.string.action_canceled), Toast.LENGTH_SHORT).show()
         }
         val dialog: AlertDialog = builder.create()
         dialog.show()

@@ -16,32 +16,4 @@
         android:padding="4dp"
         tools:listitem="@layout/fruit_card_view" />
 
-    <LinearLayout
-        android:id="@+id/buttons"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="28dp"
-        android:clipToPadding="true"
-        android:padding="4dp"
-        tools:ignore="InvalidId">
-
-        <Space
-            android:layout_width="337dp"
-            android:layout_height="66dp"
-            android:layout_weight="1" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:foreground="@drawable/plus_btn"
-            android:onClick="insertItem"
-            app:backgroundTint="@android:color/holo_green_light"
-            app:rippleColor="@color/white"
-            app:srcCompat="@drawable/plus_white_color" />
-
-    </LinearLayout>
-
 </RelativeLayout>
