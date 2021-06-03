@@ -1,8 +1,11 @@
 package com.cesardev.fruitapp
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -27,7 +30,6 @@ class MainActivity : AppCompatActivity(), FruitAdapter.OnItemClickListenner {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         if (savedInstanceState != null) {
             val saved = savedInstanceState
                     .getParcelableArrayList<Fruit>(OUT_STATE_FRUIT_ARRAY_EXTRA_ID)
@@ -43,7 +45,7 @@ class MainActivity : AppCompatActivity(), FruitAdapter.OnItemClickListenner {
         recycle_view.layoutManager = LinearLayoutManager(this)
         recycle_view.setHasFixedSize(true)
 
-        val itemTouchHelper = ItemTouchHelper(FruitItemTouchHelperCallBack(adapter!!))
+        val itemTouchHelper = ItemTouchHelper(FruitItemTouchHelperCallBack(adapter!!, this))
         itemTouchHelper.attachToRecyclerView(recycle_view)
     }
         //Chama SecondActivity para adicionar o item
@@ -78,6 +80,25 @@ class MainActivity : AppCompatActivity(), FruitAdapter.OnItemClickListenner {
         selectedPosition = position
         startActivityForResult(intent, 2)
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_add_fruit, menu)
+        return super.onCreateOptionsMenu(menu)
+
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+
+        R.id.menu_add_fruit -> {
+
+            val intent : Intent =  Intent(this, SecondActivity::class.java)
+            startActivityForResult(intent, 1)
+            true
+        }
+        else -> {
+            super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
